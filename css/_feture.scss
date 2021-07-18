@@ -1,0 +1,90 @@
+.section-feture {
+  padding: 5rem 0;
+  background-color: $Light-Grayish-Blue;
+  text-align: center;
+}
+
+.feture {
+  background-color: $Light-Grayish-Blue;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feture-faq {
+  padding-bottom: 6rem;
+}
+
+.feture-heading {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: $Dark-Blue;
+  margin-bottom: 2rem;
+}
+
+.feture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feture-svg {
+  margin-bottom: 2rem;
+}
+
+.feture-box-heading {
+  color: $Dark-Blue;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .section-feture {
+    padding: 8rem 0 5rem 0;
+    text-align: left;
+  }
+
+  .feture-faq {
+    text-align: left;
+    width: 60%;
+  }
+
+  .dextop-paragraph {
+    font-size: 1.8rem;
+  }
+
+  .feture-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+  }
+
+  .feture {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .hero-paragraph {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .feture-svg {
+    margin-bottom: 3rem;
+  }
+
+  .feture-box-heading {
+    margin-bottom: 3rem;
+    cursor: pointer;
+  }
+
+  .feture-box-heading:hover {
+    color: $Lime-Green;
+  }
+}

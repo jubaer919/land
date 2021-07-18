@@ -1,0 +1,145 @@
+.header {
+  height: 15vh;
+  z-index: 999;
+}
+
+.nav {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger div {
+  width: 2.6rem;
+  height: 2px;
+  background-color: $Dark-Blue;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  transition: all 0.3s;
+}
+
+.toggle .line-1 {
+  transform: rotate(45deg) translate(4px, 6px);
+}
+
+.toggle .line-2 {
+  opacity: 0;
+}
+
+.toggle .line-3 {
+  transform: rotate(-45deg) translate(4px, -6px);
+}
+
+.overlay-display {
+  animation: overlay-fade 300ms ease-in-out forwards;
+}
+
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.list__items {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  position: relative;
+}
+
+.list__items::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: $Lime-Green;
+  transform-origin: right;
+  transform: scale(0);
+  transition: all 0.4s ease-in-out;
+}
+
+.list__items:hover::after {
+  transform: scale(1);
+}
+
+.header-link {
+  color: $Grayish-Blue;
+}
+
+.header-link:hover {
+  color: $Dark-Blue;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.6rem 3rem;
+  font-size: 1.4rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  color: $White;
+  background-image: linear-gradient(to right, $Lime-Green, $Bright-Cyan);
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 10vh;
+  }
+  .nav {
+    height: 10vh;
+  }
+  .btn-header {
+    display: none;
+  }
+
+  .header__list {
+    position: absolute;
+    top: 20vh;
+    left: 10vw;
+    bottom: 30vh;
+    right: 10vw;
+    background-color: $White;
+    flex-direction: column;
+    z-index: 25;
+    width: 80vw;
+    height: 50vh;
+    visibility: hidden;
+  }
+
+  .list-animation {
+    animation: list-fade 300ms ease-in-out 300ms forwards;
+  }
+
+  @keyframes list-fade {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-90vw);
+    }
+
+    1% {
+      visibility: visible;
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
